@@ -1,0 +1,38 @@
+.m-copy-block {
+  hr {
+    width: 128px;
+    height: 3px;
+    background-color: $color-thunderbird;
+    border: 0;
+    margin-bottom: $component-spacing-desktop;
+  }
+
+  h3.title {
+    text-transform: capitalize;
+    font: bold 32px "Open Sans", sans-serif;
+    margin-bottom: $component-spacing-desktop;
+  }
+
+  p {
+    max-width: 775px;
+    line-height: 2;
+    margin-bottom: $component-spacing-desktop;
+  }
+
+  &--centred {
+    h3.title {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    hr {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "status": "prototype",
+  "context": {
+    "copyBlock": {
+      "heading": "Adventure Packages",
+      "modifiers": ["centred"]
+    }
+  }
+}

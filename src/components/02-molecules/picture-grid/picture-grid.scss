@@ -1,0 +1,56 @@
+.m-picture-grid {
+  width: 100%;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+
+    li {
+      height: 350px;
+      padding-bottom: $component-spacing-mobile;
+      background-clip: content-box;
+      background-size: cover;
+      background-position: center;
+    }
+
+    li.small {
+      flex-basis: 100%;
+    }
+
+    li.large {
+      flex-basis: 100%;
+    }
+  }
+
+  @include mq(tablet) {
+    ul {
+      li {
+        &:nth-child(odd) {
+          padding-right: $component-spacing-mobile;
+        }
+      }
+
+      li.small {
+        flex-basis: 40%;
+      }
+
+      li.large {
+        flex-basis: 60%;
+      }
+    }
+  }
+
+  @include mq(desktop) {
+    ul {
+      li.small {
+        flex-basis: 30%;
+      }
+
+      li.large {
+        flex-basis: 70%;
+      }
+    }
+  }
+}

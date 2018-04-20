@@ -1,0 +1,104 @@
+{
+  "title": "Light Background Variations",
+  "collated": true,
+  "preview": "@preview-collated",
+  "context": {
+    "text": "Primary Solid"
+  },
+  "variants": [
+    {
+      "name": "option",
+      "context": {
+        "modifiers": [
+          "option"
+        ],
+        "text": "Option Solid"
+      }
+    },
+    {
+      "name": "action",
+      "context": {
+        "modifiers": [
+          "action"
+        ],
+        "text": "Action Solid"
+      }
+    },
+    {
+      "name": "alert",
+      "context": {
+        "modifiers": [
+          "alert"
+        ],
+        "text": "Alert Solid"
+      }
+    },
+    {
+      "name": "disabled",
+      "context": {
+        "modifiers": [
+          "disabled"
+        ],
+        "text": "Disabled Solid"
+      }
+    },
+    {
+      "name": "stroked",
+      "context": {
+        "modifiers": [
+          "stroked"
+        ],
+        "text": "Primary Stroked"
+      }
+    },
+    {
+      "name": "option stroked",
+      "context": {
+        "modifiers": [
+          "option",
+          "stroked"
+        ],
+        "text": "Option Stroked"
+      }
+    },
+    {
+      "name": "action stroked",
+      "context": {
+        "modifiers": [
+          "action",
+          "stroked"
+        ],
+        "text": "Action Stroked"
+      }
+    },
+    {
+      "name": "alert stroked",
+      "context": {
+        "modifiers": [
+          "alert",
+          "stroked"
+        ],
+        "text": "Alert Stroked"
+      }
+    },
+    {
+      "name": "disabled stroked",
+      "context": {
+        "modifiers": [
+          "disabled",
+          "stroked"
+        ],
+        "text": "Disabled Stroked"
+      }
+    },
+    {
+      "name": "underlined",
+      "context": {
+        "modifiers": [
+          "underlined"
+        ],
+        "text": "Underlined"
+      }
+    }
+  ]
+}

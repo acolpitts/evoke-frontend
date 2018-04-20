@@ -1,0 +1,246 @@
+/******************************************************************************
+  Button Variables
+*******************************************************************************/
+$btn-primary-bg           : $color-lochmara;
+$btn-primary-hover-bg     : $color-endeavour;
+$btn-primary-light-bg     : $color-curiousblue;
+$btn-option-bg            : $color-curiousblue;
+$btn-option-light-bg      : $color-lochmara;
+$btn-action-bg            : $color-sushi;
+$btn-alert-bg             : $color-crimson;
+$btn-disabled-bg          : $color-alto;
+$btn-disabled-fg          : $color-white;
+$btn-disabled-light-bg    : $color-white;
+$btn-disabled-light-fg    : $color-endeavour;
+$btn-disabled-stroked-fg  : $color-alto;
+$btn-solid-fg             : $color-white;
+$btn-stroked-bg           : transparent;
+$btn-stroked-fg           : $color-mine-shaft;
+$btn-stroked-light-fg     : $color-white;
+$btn-underline-bg         : $color-curiousblue;
+$btn-underline-light-bg   : $color-malibu;
+
+
+/******************************************************************************
+  Button Style Mixins
+*******************************************************************************/
+
+@mixin btn-solid-styles($color-bg, $color-fg, $color-bg-hover: null, $color-fg-hover: null) {
+  background-color: $color-bg;
+  color: $color-fg;
+
+  .no-touchevents &:hover {
+    @if $color-bg-hover != null {
+      background-color: $color-bg-hover;
+    } @else {
+      background-color: $color-bg;
+    }
+    @if $color-fg-hover != null {
+      color: $color-fg-hover;
+    } @else {
+      color: $color-fg;
+    }
+  }
+}
+
+@mixin btn-stroked-styles($color-bg, $color-fg, $color-bg-hover: null, $color-fg-hover: null, $underline: false) {
+  background-color: $btn-stroked-bg;
+  @if $underline == true {
+    box-shadow: inset 0 8px 3px -3px $color-bg;
+  } @else {
+    box-shadow: inset 0 0 0 3px $color-bg;
+  }
+  color: $color-fg;
+
+  .no-touchevents &:hover {
+    background-color: $btn-stroked-bg;
+    @if $color-bg-hover != null {
+      box-shadow: inset 0 0 0 3px $color-bg-hover;
+    } @else {
+      box-shadow: inset 0 0 0 3px $color-bg;
+    }
+    @if $color-fg-hover != null {
+      color: $color-fg-hover;
+    } @else {
+      color: $color-fg;
+    }
+  }
+}
+
+
+/******************************************************************************
+  Primary / Default Styles
+*******************************************************************************/
+
+.a-btn {
+  display: inline-block;
+  padding: px-to-rem(14);
+  color: $btn-solid-fg;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-semibold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 200ms ease-out, color 200ms ease-out, box-shadow 200ms ease-out, border-color 200ms ease-out;
+
+  @include font-size(14);
+  @include btn-solid-styles($btn-primary-bg, $btn-solid-fg, $btn-primary-hover-bg);
+
+  //Light modifier â€” for buttons on dark backgrounds
+  &.a-btn--light {
+    @include btn-solid-styles($btn-primary-light-bg, $btn-solid-fg, one-darker($btn-primary-light-bg));
+  }
+
+  //Stroked modifier - buttons that used a stroked border instead of solid background color
+  &.a-btn--stroked {
+    @include btn-stroked-styles($btn-primary-bg, $btn-stroked-fg, one-darker($btn-primary-bg), one-lighter($btn-stroked-fg));
+
+    //Stroked & light modifier
+    &.a-btn--light {
+      @include btn-stroked-styles($btn-primary-light-bg, $btn-solid-fg, one-darker($btn-primary-light-bg));
+    }
+  }
+
+  //Breakpoints
+  @include mq(desktop) {
+    @include font-size(15);
+  }
+}
+
+/******************************************************************************
+  Size Modifiers
+*******************************************************************************/
+
+/*-----------------------------------------------------------------------------
+  Large
+------------------------------------------------------------------------------*/
+.a-btn--large {
+  display: block;
+  padding: px-to-rem(17);
+  @include font-size(16);
+
+  //Breakpoints
+  @include mq(tablet) {
+    display: inline-block;
+  }
+  @include mq(desktop) {
+    @include font-size(17);
+  }
+}
+
+/*-----------------------------------------------------------------------------
+  Small
+------------------------------------------------------------------------------*/
+.a-btn--small {
+  padding: px-to-rem(13);
+  @include font-size(13);
+
+  //Breakpoints
+  @include mq(desktop) {
+    @include font-size(13);
+  }
+}
+
+
+/******************************************************************************
+  Color Modifiers
+*******************************************************************************/
+
+/*-----------------------------------------------------------------------------
+  Option
+------------------------------------------------------------------------------*/
+.a-btn--option {
+  @include btn-solid-styles($btn-option-bg, $btn-solid-fg, one-darker($btn-option-bg));
+
+  &.a-btn--light {
+    @include btn-solid-styles($btn-option-light-bg, $btn-solid-fg, one-darker($btn-option-light-bg));
+  }
+
+  &.a-btn--stroked {
+    @include btn-stroked-styles($btn-option-bg, $btn-stroked-fg, one-darker($btn-option-bg), one-lighter($btn-stroked-fg));
+
+    &.a-btn--light {
+      @include btn-stroked-styles($btn-option-light-bg, $btn-solid-fg, one-darker($btn-option-light-bg));
+    }
+  }
+}
+
+/*-----------------------------------------------------------------------------
+  Action
+------------------------------------------------------------------------------*/
+.a-btn--action {
+  @include btn-solid-styles($btn-action-bg, $btn-solid-fg, one-darker($btn-action-bg));
+
+  &.a-btn--light {
+    @include btn-solid-styles($btn-action-bg, $btn-solid-fg, one-darker($btn-action-bg));
+  }
+
+  &.a-btn--stroked {
+    @include btn-stroked-styles($btn-action-bg, $btn-stroked-fg, one-darker($btn-action-bg), one-lighter($btn-stroked-fg));
+  }
+}
+
+/*-----------------------------------------------------------------------------
+  Alert
+------------------------------------------------------------------------------*/
+.a-btn--alert {
+  @include btn-solid-styles($btn-alert-bg, $btn-solid-fg, one-darker($btn-alert-bg));
+
+  &.a-btn--light {
+    @include btn-solid-styles($btn-alert-bg, $btn-solid-fg, one-darker($btn-alert-bg));
+  }
+
+  &.a-btn--stroked {
+    @include btn-stroked-styles($btn-alert-bg, $btn-stroked-fg, one-darker($btn-alert-bg), one-lighter($btn-stroked-fg));
+  }
+}
+
+/*-----------------------------------------------------------------------------
+  Disabled
+------------------------------------------------------------------------------*/
+.a-btn--disabled {
+  @include btn-solid-styles($btn-disabled-bg, $btn-disabled-fg, one-darker($btn-disabled-bg));
+
+  &.a-btn--light {
+    @include btn-solid-styles($btn-disabled-light-bg, $btn-disabled-light-fg, palette-shift($btn-disabled-light-bg, -3));
+  }
+
+  &.a-btn--stroked {
+    @include btn-stroked-styles($btn-disabled-bg, $btn-disabled-stroked-fg);
+
+    &.a-btn--light {
+      @include btn-stroked-styles($btn-disabled-light-bg, $btn-disabled-stroked-fg);
+    }
+  }
+}
+
+
+/******************************************************************************
+  Underline Modifier
+*******************************************************************************/
+
+.a-btn--underlined {
+  padding-right: 0;
+  padding-left: 0;
+  background-color: transparent;
+  border-bottom: 3px solid $btn-underline-bg;
+  color: $btn-stroked-fg;
+  @include font-size(13);
+
+  .no-touchevents &:hover {
+    background-color: transparent;
+    border-color: one-darker($btn-underline-bg);
+    color: one-lighter($btn-stroked-fg);
+  }
+
+  &.a-btn--light {
+    background-color: transparent;
+    border-color: $btn-underline-light-bg;
+    color: $btn-stroked-light-fg;
+
+    .no-touchevents &:hover {
+      background-color: transparent;
+      border-color: one-darker($btn-underline-light-bg);
+    }
+  }
+}

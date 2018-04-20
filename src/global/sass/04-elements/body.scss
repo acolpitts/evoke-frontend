@@ -1,0 +1,15 @@
+// sass-lint:disable  no-vendor-prefixes
+/******************************************************************************
+  Body
+
+  Global styles for the body elements.
+*******************************************************************************/
+
+body {
+  background-color: $color-body-bg;
+  font-family: $font-family-primary;
+  font-weight: $font-weight-light;
+  font-size: px-to-rem(14);
+  color: $color-body-copy;
+  -webkit-font-smoothing: antialiased;
+}

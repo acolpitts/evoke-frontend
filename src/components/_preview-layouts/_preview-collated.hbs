@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="{{ path '/css/styles.css' }}">
+
+  <style>
+    /*
+    Using some inline styles for spacing, etc. to components that will be
+    applied JUST for the component library and not part of the production css.
+    */
+    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+  </style>
+
+  <title>{{ _target.title }} | {{ _config.project.title }}</title>
+  <script type="text/javascript" src="{{ path '/vendor/js/modernizr.min.js' }}"></script>
+  <style>
+    /*
+    Using some inline styles for spacing, etc. to components that will be
+    applied JUST for the component library and not part of the production css.
+    */
+    .a-btn {
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  {{{ yield }}}
+
+  <script type="text/javascript" src="{{ path '/js/scripts.min.js' }}"></script>
+</body>
+</html>

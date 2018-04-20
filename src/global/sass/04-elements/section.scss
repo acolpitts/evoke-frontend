@@ -1,0 +1,17 @@
+section {
+  display: flex;
+  flex-direction: column;
+  padding-top: $section-spacing-mobile;
+  padding-bottom: $section-spacing-mobile;
+
+  &:not(.m-hero) {
+    &:nth-child(even) {
+      background-color: $color-concrete;
+    }
+  }
+
+  @include mq(desktop) {
+    padding-top: $section-spacing-desktop;
+    padding-bottom: $section-spacing-desktop;
+  }
+}

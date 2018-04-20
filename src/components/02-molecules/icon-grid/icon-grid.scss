@@ -1,0 +1,30 @@
+.m-icon-grid {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+  }
+
+  li {
+    padding: 50px;
+    flex-basis: 100%;
+    text-align: center;
+
+    i {
+      color: $color-lochmara;
+    }
+
+    h4 {
+      font-size: 30px;
+      margin: $component-spacing-mobile 0;
+    }
+  }
+
+  @include mq(tablet) {
+    li {
+      flex-basis: 50%;
+    }
+  }
+
+}

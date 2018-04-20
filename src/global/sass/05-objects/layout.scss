@@ -1,0 +1,41 @@
+/******************************************************************************
+  Layout
+
+  Contains classes for global layouts. Classes are prefixed with "l".
+*******************************************************************************/
+
+.l-width-wrapper {
+  @include mq(desktop) {
+    max-width: $max-container-width;
+    margin: auto;
+  }
+}
+
+.l-gutters {
+  padding-right: $gutters-mobile;
+  padding-left: $gutters-mobile;
+
+  @include mq(phablet) {
+    padding-right: $gutters-phablet;
+    padding-left: $gutters-phablet;
+  }
+
+  @include mq(tablet) {
+    padding-right: $gutters-tablet;
+    padding-left: $gutters-tablet;
+  }
+
+  @include mq(desktop) {
+    padding-right: $gutters-desktop;
+    padding-left: $gutters-desktop;
+  }
+}
+
+.l-gutters-mobile-only {
+  padding: 0 $gutters-mobile;
+
+  @include mq(desktop) {
+    padding: 0;
+  }
+}
+

@@ -1,0 +1,97 @@
+/******************************************************************************
+  Color Theme
+
+  Semantic variables are assigned values from color palettes. This allows for
+  maximum flexibility, maintainability & extensibility. This is intended for
+  color variables that will be used globally. Color variables specific to a
+  component should be defined within that component's .scss file(s).
+
+  All color variable names are given prefix "color" to aid with autocompletion.
+
+  BAD
+  border-color: #0000ff
+
+  BETTER
+  border-color: $color-blue
+
+  BEST
+  $my-border-color: $color-blue;
+  border-color: $my-border-color;
+*******************************************************************************/
+
+$color-primary:         $color-sushi;
+$color-primary-dark:    darken($color-primary, 20);
+$color-primary-light:   lighten($color-primary, 20);
+$color-primary-text:    $color-mine-shaft;
+
+$color-secondary:       $color-thunderbird;
+$color-secondary-text:  $color-boulder;
+
+$color-body-bg:         $color-off-white;
+$color-body-copy:       $color-primary-text;
+
+$color-divider:         $color-alto;
+
+.color-white {
+  color: $color-white;
+
+  &-bg {
+    background-color: $color-white;
+  }
+}
+
+.color-primary {
+  color: $color-primary;
+
+  &-bg {
+    background-color: $color-primary;
+  }
+}
+
+.color-primary--dark {
+  color: $color-primary-dark;
+
+  &-bg {
+    background-color: $color-primary-dark;
+  }
+}
+
+.color-primary--light {
+  color: $color-primary-light;
+
+  &-bg {
+    background-color: $color-primary-light;
+  }
+}
+
+.color-secondary {
+  color: $color-secondary;
+
+  &-bg {
+    background-color: $color-secondary;
+  }
+}
+
+.color-primary-text {
+  color: $color-primary-text;
+
+  &-bg {
+    background-color: $color-primary-text;
+  }
+}
+
+.color-secondary-text {
+  color: $color-secondary-text;
+
+  &-bg {
+    background-color: $color-secondary-text;
+  }
+}
+
+.color-divider {
+  color: $color-divider;
+
+  &-bg {
+    background-color: $color-divider;
+  }
+}

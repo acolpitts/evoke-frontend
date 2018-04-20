@@ -1,0 +1,95 @@
+{
+  "title": "Dark Background Variations",
+  "preview": "@preview-collated-dark",
+  "collated": true,
+  "context": {
+    "text": "Primary Solid",
+    "modifiers": [
+      "light"
+    ]
+  },
+  "variants": [
+    {
+      "name": "option light",
+      "context": {
+        "modifiers": [
+          "option",
+          "light"
+        ],
+        "text": "Option Solid"
+      }
+    },
+    {
+      "name": "action light",
+      "context": {
+        "modifiers": [
+          "action",
+          "light"
+        ],
+        "text": "Action Solid"
+      }
+    },
+    {
+      "name": "alert light",
+      "context": {
+        "modifiers": [
+          "alert",
+          "light"
+        ],
+        "text": "Alert Solid"
+      }
+    },
+    {
+      "name": "disabled light",
+      "context": {
+        "modifiers": [
+          "disabled",
+          "light"
+        ],
+        "text": "Disabled Solid"
+      }
+    },
+    {
+      "name": "stroked light",
+      "context": {
+        "modifiers": [
+          "stroked",
+          "light"
+        ],
+        "text": "Primary Stroked"
+      }
+    },
+    {
+      "name": "option stroked light",
+      "context": {
+        "modifiers": [
+          "option",
+          "stroked",
+          "light"
+        ],
+        "text": "Option Stroked"
+      }
+    },
+    {
+      "name": "disabled stroked light",
+      "context": {
+        "modifiers": [
+          "disabled",
+          "stroked",
+          "light"
+        ],
+        "text": "Disabled Stroked"
+      }
+    },
+    {
+      "name": "underlined light",
+      "context": {
+        "modifiers": [
+          "underlined",
+          "light"
+        ],
+        "text": "Underlined Light"
+      }
+    }
+  ]
+}

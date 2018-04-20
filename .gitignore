@@ -1,0 +1,13 @@
+# OSX
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Generated files
+src/assets/js/
+src/assets/css/
+
+# Build folders
+build/
+dist/

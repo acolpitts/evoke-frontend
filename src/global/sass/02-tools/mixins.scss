@@ -1,0 +1,80 @@
+/******************************************************************************
+  Mixins
+
+  All the globally defined mixins & functions.
+*******************************************************************************/
+
+/*-----------------------------------------------------------------------------
+  Pixels to REM
+------------------------------------------------------------------------------*/
+@function px-to-rem($pixels) {
+  @return ($pixels / $unitless-base-font-size) + rem;
+}
+
+/*-----------------------------------------------------------------------------
+  Font-Size
+
+  Converts px units to rem, as well as outputs px units for legacy browsers.
+------------------------------------------------------------------------------*/
+@mixin font-size($size-value: 16, $line: $size-value * 1.5) {
+  // sass-lint:disable  no-duplicate-properties
+  font-size: ($size-value) + px;
+  line-height: ($line) + px;
+  font-size: px-to-rem($size-value);
+  line-height: px-to-rem($line);
+}
+
+/*-----------------------------------------------------------------------------
+  Returns the next lightest color from the global color palette.
+------------------------------------------------------------------------------*/
+@function one-lighter($color) {
+  @return nth($palette-global, index($palette-global, $color) + 1);
+}
+
+/*-----------------------------------------------------------------------------
+  Returns the next darkest color from the global color palette.
+------------------------------------------------------------------------------*/
+@function one-darker($color) {
+  @return nth($palette-global, index($palette-global, $color) - 1);
+}
+
+/*-----------------------------------------------------------------------------
+  Returns the color in the palette shifted by amount $shift.
+------------------------------------------------------------------------------*/
+@function palette-shift($color, $shift) {
+  @return nth($palette-global, index($palette-global, $color) + $shift);
+}
+
+/*-----------------------------------------------------------------------------
+  Mixin for creating ellipsis overflow for multiline text fields.
+------------------------------------------------------------------------------*/
+@mixin ellipsis ($max-height, $lines: 2) {
+  // sass-lint:disable no-vendor-prefixes
+  // Fallback for non-webkit browsers (does not render ellipsis)
+  overflow: hidden;
+  max-height: $max-height;
+
+  // Webkit solution for multiline ellipsis
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+
+  // Solution for Opera
+  text-overflow: -o-ellipsis-lastline;
+}
+
+@mixin color-swatch($color: $primary-color, $size: 96px) {
+
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    width: $size;
+  }
+
+  &__swatch {
+    width: $size;
+    height: 100%;
+    background-color: $color;
+  }
+}

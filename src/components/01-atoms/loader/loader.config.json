@@ -1,0 +1,12 @@
+{
+  "title": "Loader",
+  "status": "prototype",
+  "preview": "@preview-collated-dark",
+  "collated": true,
+  "context": {
+    "text": "Primary Solid",
+    "modifiers": [
+      "light"
+    ]
+  }
+}

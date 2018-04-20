@@ -1,0 +1,24 @@
+{
+  "title": "Button Size Variations",
+  "collated": true,
+  "preview": "@preview-collated",
+  "context": {
+    "text": "Medium Size"
+  },
+  "variants": [
+    {
+      "name": "large",
+      "context": {
+        "modifiers": ["large"],
+        "text": "Large Size"
+      }
+    },
+    {
+      "name": "small",
+      "context": {
+        "modifiers": ["small"],
+        "text": "Small Size"
+      }
+    }
+  ]
+}
